@@ -4,13 +4,17 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   BASE_OPERATIONS = [{ convert: :jpg }]
 
-  process :optimize
-
   version :carousel_large do
-    BASE_OPERATIONS.each{ |operation| send(:process, operation) }
+    # BASE_OPERATIONS.each{ |operation| send(:process, operation) }
     process resize_strategy: [:carousel_large, :resize_to_fit, [970, 546]]
-    process quality: 80
     process :optimize
+    process quality: 80
+  end
+
+  version :carousel_large_basic do
+    # BASE_OPERATIONS.each{ |operation| send(:process, operation) }
+    process resize_strategy: [:carousel_large_basic, :resize_to_fit, [970, 546]]
+    process quality: 80
   end
 
   private
