@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<h1> Original size - processed</h1>
+<%= image_tag @user.avatar %>
+<br>
+<br>
+<br>
+
+<h1> Carousel Large size (970x546 with 80% quality)</h1>
+<%= image_tag @user.avatar.try(:carousel_large) %>
+
+<br>
+<br>
+<br>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave', '~> 0.9.0'
 gem 'carrierwave-imageoptimizer', '~> 1.0.1'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
